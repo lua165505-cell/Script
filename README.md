@@ -1,19 +1,25 @@
-# ScriptVault landing page demo
+# ScriptVault full-stack prototype
 
-This repository now contains a static marketing page for **ScriptVault**, a secure Roblox script delivery concept aimed at legitimate creator workflows.
+This repository contains a safe full-stack prototype for **ScriptVault**, positioned as a secure Roblox module delivery platform for legitimate creator workflows.
 
-## Files
+## Included pieces
 
-- `index.html` – page structure and copy
-- `styles.css` – responsive styling
-- `script.js` – mobile nav and demo CTA submission behavior
+- `server.js` – dependency-free Node.js HTTP server for static files and demo JSON APIs
+- `index.html` – landing page and control center UI
+- `styles.css` – responsive styling for all sections and cards
+- `script.js` – API-driven rendering, waitlist submission, and mobile navigation
+- `package.json` – start script for the backend server
+
+## API routes
+
+- `GET /api/dashboard` – returns metrics, releases, modules, audit feed, and integrations
+- `GET /api/waitlist` – returns the current in-memory waitlist count
+- `POST /api/waitlist` – accepts `email`, `teamSize`, and `useCase`
 
 ## Local preview
 
-Open `index.html` directly in a browser, or run a simple static server such as:
-
 ```bash
-python3 -m http.server 8000
+npm start
 ```
 
-Then visit `http://localhost:8000`.
+Then visit `http://127.0.0.1:3000`.
