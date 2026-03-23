@@ -1,0 +1,9 @@
+{
+  "name": "scriptvault",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ScriptVault full-stack prototype with a safe backend demo API.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

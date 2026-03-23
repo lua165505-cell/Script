@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScriptVault | Full-Stack Roblox Delivery Prototype</title>
+    <meta
+      name="description"
+      content="ScriptVault is a full-stack prototype for secure Roblox module delivery with dashboard analytics, release management, access controls, and creator collaboration workflows."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero" id="top">
+        <nav class="nav">
+          <a class="brand" href="#top">
+            <span class="brand__mark">SV</span>
+            <span>ScriptVault</span>
+          </a>
+          <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+          <div class="nav__links" id="nav-menu">
+            <a href="#features">Features</a>
+            <a href="#control-center">Control Center</a>
+            <a href="#modules">Modules</a>
+            <a href="#faq">FAQ</a>
+            <a class="button button--ghost" href="#cta">Request Access</a>
+          </div>
+        </nav>
+
+        <div class="hero__content">
+          <div class="hero__copy">
+            <span class="eyebrow">Now with backend APIs</span>
+            <h1>Secure script delivery, release control, and analytics in one stack.</h1>
+            <p class="hero__lede">
+              ScriptVault is now a full-stack prototype with a live backend API, dynamic dashboard metrics, release feed, waitlist endpoint, and richer collaboration tooling for authorized Roblox development teams.
+            </p>
+            <div class="hero__actions">
+              <a class="button" href="#cta">Join private beta</a>
+              <a class="button button--secondary" href="#control-center">View live data</a>
+            </div>
+            <div class="hero__stats" id="hero-stats" aria-live="polite"></div>
+          </div>
+
+          <aside class="hero__panel card">
+            <div class="card__heading">
+              <p class="card__label">Backend-enabled delivery flow</p>
+              <span class="status-pill status-pill--accent">API live</span>
+            </div>
+            <div class="code-block">
+              <span class="code-block__prompt">Authorized load snippet</span>
+              <pre><code>local ScriptVault = require(ReplicatedStorage.ScriptVault)
+local moduleData = ScriptVault.load({
+  project = "vault-ui",
+  channel = "stable",
+  token = env.SIGNED_TOKEN,
+})</code></pre>
+            </div>
+            <div class="hero__panel-grid">
+              <div>
+                <span>Release channels</span>
+                <strong>Stable, beta, rollback-ready</strong>
+              </div>
+              <div>
+                <span>Access rules</span>
+                <strong>Signed tokens and scoped permissions</strong>
+              </div>
+              <div>
+                <span>Observability</span>
+                <strong>Metrics, audit feed, and delivery history</strong>
+              </div>
+              <div>
+                <span>API endpoints</span>
+                <strong>/api/dashboard and /api/waitlist</strong>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </header>
+
+      <main>
+        <section class="section" id="features">
+          <div class="section-heading">
+            <span class="eyebrow">Expanded platform</span>
+            <h2>More features, backed by real demo APIs.</h2>
+            <p>
+              This prototype now includes backend routes, dynamic dashboard rendering, waitlist capture, audit activity, release history, and module summaries for a more complete product review.
+            </p>
+          </div>
+          <div class="feature-grid">
+            <article class="card feature-card">
+              <h3>Dashboard API</h3>
+              <p>Fetch hero metrics, release snapshots, module summaries, and integration highlights from a backend JSON endpoint.</p>
+            </article>
+            <article class="card feature-card">
+              <h3>Waitlist backend</h3>
+              <p>Capture beta interest with a POST endpoint that validates requests and returns a live count.</p>
+            </article>
+            <article class="card feature-card">
+              <h3>Release registry</h3>
+              <p>Show stable, beta, and rollback channels in a structured table powered by live API data.</p>
+            </article>
+            <article class="card feature-card">
+              <h3>Audit activity feed</h3>
+              <p>Surface recent actions so reviewers can understand what operational visibility could look like.</p>
+            </article>
+            <article class="card feature-card">
+              <h3>Module system</h3>
+              <p>Highlight the UI, logic, and security module structure with backend-driven descriptions.</p>
+            </article>
+            <article class="card feature-card">
+              <h3>Integration catalog</h3>
+              <p>Promote Git sync, webhook alerts, exports, and scoped keys in a dedicated live section.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section--alt" id="control-center">
+          <div class="section-heading">
+            <span class="eyebrow">Control center</span>
+            <h2>Inspect live metrics and release health.</h2>
+            <p>These cards are rendered from the backend instead of being hard-coded into the page.</p>
+          </div>
+          <div class="dashboard-layout">
+            <div class="dashboard-preview card">
+              <div class="dashboard-preview__header">
+                <span>vault-ui / stable</span>
+                <span class="status-pill">Healthy</span>
+              </div>
+              <div class="dashboard-preview__metrics" id="dashboard-metrics"></div>
+              <div class="dashboard-preview__list" id="integrations-list"></div>
+            </div>
+
+            <div class="stack">
+              <section class="card stack-card">
+                <div class="stack-card__header">
+                  <h3>Release history</h3>
+                  <span class="card__label">Rendered from <code>/api/dashboard</code></span>
+                </div>
+                <div class="release-table" id="release-table"></div>
+              </section>
+              <section class="card stack-card">
+                <div class="stack-card__header">
+                  <h3>Audit feed</h3>
+                  <span class="card__label">Operational activity</span>
+                </div>
+                <ul class="activity-feed" id="audit-feed"></ul>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="modules">
+          <div class="section-heading">
+            <span class="eyebrow">Modules and integrations</span>
+            <h2>Organize delivery with reusable building blocks.</h2>
+          </div>
+          <div class="module-layout">
+            <div class="module-grid" id="module-grid"></div>
+            <aside class="card integrations-card">
+              <div class="stack-card__header">
+                <h3>Built-in integrations</h3>
+                <span class="card__label">Safe creator workflows</span>
+              </div>
+              <ul class="bullet-list" id="integration-bullets"></ul>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section section--compact" id="faq">
+          <div class="section-heading">
+            <span class="eyebrow">FAQ</span>
+            <h2>Built for approved creator workflows, not bypass tooling.</h2>
+          </div>
+          <div class="faq-list">
+            <article class="card faq-item">
+              <h3>What changed in this iteration?</h3>
+              <p>The project now includes a real Node.js backend, dynamic API-fed UI sections, and a functional waitlist submission flow.</p>
+            </article>
+            <article class="card faq-item">
+              <h3>Does the backend persist data?</h3>
+              <p>This prototype keeps waitlist entries in memory so reviewers can exercise backend flows without adding a database.</p>
+            </article>
+            <article class="card faq-item">
+              <h3>Is the platform positioned for exploit hosting?</h3>
+              <p>No. The product copy and features are intentionally focused on legitimate, authorized Roblox development workflows.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section cta-section" id="cta">
+          <div class="card cta-card">
+            <div>
+              <span class="eyebrow">Private beta access</span>
+              <h2>Request access and see the backend respond.</h2>
+              <p>
+                Submit the form below to hit the demo waitlist API and receive a live confirmation count.
+              </p>
+              <div class="waitlist-count" id="waitlist-count">Waitlist count: loading…</div>
+            </div>
+            <form class="cta-form" id="waitlist-form">
+              <label>
+                Email
+                <input type="email" name="email" placeholder="team@studio.com" required />
+              </label>
+              <label>
+                Team size
+                <select name="teamSize" required>
+                  <option value="">Select a team size</option>
+                  <option>1-5 creators</option>
+                  <option>6-20 creators</option>
+                  <option>21-50 creators</option>
+                  <option>50+ creators</option>
+                </select>
+              </label>
+              <label>
+                Primary use case
+                <textarea name="useCase" rows="4" placeholder="Tell us how your team would use ScriptVault." required></textarea>
+              </label>
+              <button class="button" type="submit">Send request</button>
+              <p class="form-note">This demo sends data to the in-memory backend endpoint at <code>/api/waitlist</code>.</p>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
