@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScriptVault X | Full Platform Dashboard Prototype</title>
+    <meta
+      name="description"
+      content="ScriptVault X is a safe full-platform prototype with authentication, script management, analytics, UI builder tooling, and settings for legitimate Roblox creator workflows."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar card">
+        <div>
+          <a class="brand" href="#dashboard">
+            <span class="brand__mark">SV</span>
+            <div>
+              <strong>ScriptVault X</strong>
+              <span>Invisible code. Visible power.</span>
+            </div>
+          </a>
+        </div>
+        <nav class="sidebar__nav">
+          <a href="#dashboard">🏠 Dashboard</a>
+          <a href="#scripts">📜 My Scripts</a>
+          <a href="#upload">➕ Upload Script</a>
+          <a href="#builder">🎨 UI Builder</a>
+          <a href="#security">🔐 Security Settings</a>
+          <a href="#analytics">📊 Analytics</a>
+          <a href="#settings">⚙️ Settings</a>
+        </nav>
+        <div class="sidebar__footer card card--inset">
+          <span class="eyebrow">Safe prototype</span>
+          <p>
+            This demo focuses on approved creator workflows and intentionally does not implement exploit hosting, anti-dump behavior, or execution evasion systems.
+          </p>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar card">
+          <div class="topbar__search">
+            <span>🔍</span>
+            <input id="script-search" type="search" placeholder="Search scripts" />
+          </div>
+          <div class="topbar__actions">
+            <button class="icon-button" type="button">🔔 <span id="notification-count">0</span></button>
+            <button class="profile-pill" id="profile-button" type="button">👤 <span id="profile-name">Guest</span></button>
+          </div>
+        </header>
+
+        <section class="hero card" id="dashboard">
+          <div>
+            <span class="eyebrow">ScriptVault X</span>
+            <h1>One dashboard for protected delivery, collaboration, and operational control.</h1>
+            <p class="hero__lede">
+              Review a richer platform concept with authentication, script lifecycle management, live analytics, a UI builder workspace, and security controls for legitimate Roblox creator teams.
+            </p>
+            <div class="hero__actions">
+              <button class="button" id="open-login" type="button">Sign in to workspace</button>
+              <a class="button button--ghost" href="#scripts">Open script manager</a>
+            </div>
+          </div>
+          <div class="hero__meta">
+            <div class="metric-grid" id="analytics-cards"></div>
+            <div class="hero__quote card card--inset">
+              <span class="eyebrow">Tagline</span>
+              <h2 id="tagline">Invisible code. Visible power.</h2>
+              <p>
+                The platform copy below is rendered from the backend state, while sensitive exploit/evasion mechanics are intentionally excluded from the implementation.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-grid">
+          <section class="panel card" id="auth">
+            <div class="panel__header">
+              <div>
+                <span class="eyebrow">Authentication system</span>
+                <h2>Sign in / sign up concepts</h2>
+              </div>
+              <span class="status-pill" id="session-status">Signed out</span>
+            </div>
+            <div class="auth-grid">
+              <form id="login-form" class="stack-form">
+                <label>
+                  Email
+                  <input type="email" name="email" placeholder="team@studio.com" required />
+                </label>
+                <label>
+                  Password
+                  <input type="password" name="password" placeholder="••••••••" required />
+                </label>
+                <button class="button" type="submit">Sign in</button>
+              </form>
+              <div class="card card--inset feature-list">
+                <h3>Security model</h3>
+                <ul id="security-highlights"></ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel card" id="scripts">
+            <div class="panel__header">
+              <div>
+                <span class="eyebrow">Script manager</span>
+                <h2>Manage versions, visibility, and references</h2>
+              </div>
+            </div>
+            <div class="table-list" id="script-list"></div>
+          </section>
+        </section>
+
+        <section class="section-grid section-grid--asymmetric">
+          <section class="panel card" id="upload">
+            <div class="panel__header">
+              <div>
+                <span class="eyebrow">Upload script</span>
+                <h2>Add a new project</h2>
+              </div>
+            </div>
+            <form id="upload-form" class="stack-form">
+              <label>
+                Script name
+                <input type="text" name="name" placeholder="Creator Console" required />
+              </label>
+              <label>
+                Visibility
+                <select name="visibility">
+                  <option>Private</option>
+                  <option>Team</option>
+                  <option>Public metadata only</option>
+                </select>
+              </label>
+              <label>
+                Description
+                <textarea name="description" rows="4" placeholder="Describe the approved use case for this script." required></textarea>
+              </label>
+              <button class="button" type="submit">Create script entry</button>
+            </form>
+          </section>
+
+          <section class="panel card" id="builder">
+            <div class="panel__header">
+              <div>
+                <span class="eyebrow">UI builder</span>
+                <h2>Palette and live preview</h2>
+              </div>
+            </div>
+            <div class="builder-layout">
+              <div class="card card--inset">
+                <h3>Palette</h3>
+                <div class="builder-palette" id="builder-palette"></div>
+              </div>
+              <div class="card card--inset">
+                <h3>Preview canvas</h3>
+                <div class="builder-canvas" id="builder-canvas"></div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section class="section-grid section-grid--asymmetric">
+          <section class="panel card" id="security">
+            <div class="panel__header">
+              <div>
+                <span class="eyebrow">Security settings</span>
+                <h2>2FA, device tracking, rate limits</h2>
+              </div>
+            </div>
+            <div class="settings-list" id="security-settings"></div>
+          </section>
+
+          <section class="panel card" id="analytics">
+            <div class="panel__header">
+              <div>
+                <span class="eyebrow">Analytics</span>
+                <h2>Usage, blocks, and region snapshots</h2>
+              </div>
+            </div>
+            <div class="analytics-layout">
+              <ul class="feed-list" id="analytics-events"></ul>
+              <div class="card card--inset">
+                <h3>Region usage</h3>
+                <div class="region-list" id="region-list"></div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section class="section-grid">
+          <section class="panel card" id="settings">
+            <div class="panel__header">
+              <div>
+                <span class="eyebrow">Platform settings</span>
+                <h2>Operational controls</h2>
+              </div>
+            </div>
+            <form id="settings-form" class="settings-form">
+              <label class="toggle-row">
+                <span>Enable 2FA</span>
+                <input type="checkbox" name="twoFactorEnabled" />
+              </label>
+              <label class="toggle-row">
+                <span>Track devices / IPs</span>
+                <input type="checkbox" name="deviceTracking" />
+              </label>
+              <label class="toggle-row">
+                <span>Enable live updates</span>
+                <input type="checkbox" name="liveUpdates" />
+              </label>
+              <label class="toggle-row">
+                <span>Enable AI analyzer</span>
+                <input type="checkbox" name="aiAnalyzer" />
+              </label>
+              <button class="button" type="submit">Save settings</button>
+            </form>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
