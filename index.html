@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScriptVault | Secure Roblox Script Delivery</title>
+    <meta
+      name="description"
+      content="ScriptVault is a polished script hosting and delivery platform for Roblox creators who need private module distribution, version control, analytics, and controlled access."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <nav class="nav">
+          <a class="brand" href="#top">
+            <span class="brand__mark">SV</span>
+            <span>ScriptVault</span>
+          </a>
+          <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu">
+            Menu
+          </button>
+          <div class="nav__links" id="nav-menu">
+            <a href="#features">Features</a>
+            <a href="#workflow">Workflow</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#faq">FAQ</a>
+            <a class="button button--ghost" href="#cta">Request Access</a>
+          </div>
+        </nav>
+
+        <div class="hero__content" id="top">
+          <div class="hero__copy">
+            <span class="eyebrow">Secure delivery for Roblox creators</span>
+            <h1>Ship private Roblox modules without exposing your source.</h1>
+            <p class="hero__lede">
+              ScriptVault gives teams a safer way to host, version, and deliver protected Lua modules to their own Roblox experiences through authenticated endpoints, visual configuration tools, and deployment analytics.
+            </p>
+            <div class="hero__actions">
+              <a class="button" href="#cta">Join the waitlist</a>
+              <a class="button button--secondary" href="#features">Explore platform</a>
+            </div>
+            <ul class="hero__stats" aria-label="Platform highlights">
+              <li>
+                <strong>Private delivery</strong>
+                <span>Serve approved code without publishing raw source to a public client app.</span>
+              </li>
+              <li>
+                <strong>Instant updates</strong>
+                <span>Roll out new versions from one dashboard without changing references.</span>
+              </li>
+              <li>
+                <strong>Operational insight</strong>
+                <span>Track release health, access patterns, and deployment history.</span>
+              </li>
+            </ul>
+          </div>
+
+          <aside class="hero__panel card">
+            <p class="card__label">Delivery preview</p>
+            <div class="code-block">
+              <span class="code-block__prompt">Module call</span>
+              <pre><code>local ScriptVault = require(ReplicatedStorage.ScriptVault)
+ScriptVault.load({
+  project = "vault-ui",
+  channel = "stable",
+  token = env.API_TOKEN,
+})</code></pre>
+            </div>
+            <div class="hero__panel-grid">
+              <div>
+                <span>Access control</span>
+                <strong>Roles, allowlists, signed tokens</strong>
+              </div>
+              <div>
+                <span>Versioning</span>
+                <strong>Stable, beta, rollback-ready releases</strong>
+              </div>
+              <div>
+                <span>Observability</span>
+                <strong>Usage logs, release analytics, alerts</strong>
+              </div>
+              <div>
+                <span>UI tooling</span>
+                <strong>Reusable components and configuration panels</strong>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </header>
+
+      <main>
+        <section class="section" id="features">
+          <div class="section-heading">
+            <span class="eyebrow">Core platform</span>
+            <h2>Everything you need to distribute private Roblox code responsibly.</h2>
+            <p>
+              The platform focuses on secure deployment workflows for authorized projects, not exploit delivery or bypass tooling.
+            </p>
+          </div>
+          <div class="feature-grid">
+            <article class="card feature-card">
+              <h3>Protected module hosting</h3>
+              <p>
+                Store Lua modules behind authenticated APIs, scoped tokens, and environment-specific delivery rules.
+              </p>
+            </article>
+            <article class="card feature-card">
+              <h3>Visual UI configuration</h3>
+              <p>
+                Define menus, tabs, toggles, sliders, and button actions with a designer-friendly interface.
+              </p>
+            </article>
+            <article class="card feature-card">
+              <h3>Release management</h3>
+              <p>
+                Publish stable and beta channels, pin versions, roll back instantly, and review deployment history.
+              </p>
+            </article>
+            <article class="card feature-card">
+              <h3>Analytics dashboard</h3>
+              <p>
+                Monitor active installs, request volume, delivery latency, and release adoption from one panel.
+              </p>
+            </article>
+            <article class="card feature-card">
+              <h3>Access policies</h3>
+              <p>
+                Support creator teams with role-based permissions, project keys, and time-limited access tokens.
+              </p>
+            </article>
+            <article class="card feature-card">
+              <h3>Module architecture</h3>
+              <p>
+                Organize UI, logic, and shared utilities into clean, reusable packages that scale with your game.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section--alt" id="workflow">
+          <div class="section-heading">
+            <span class="eyebrow">Workflow</span>
+            <h2>From upload to live release in four steps.</h2>
+          </div>
+          <div class="timeline">
+            <article class="timeline__item card">
+              <span class="timeline__step">01</span>
+              <h3>Upload or sync code</h3>
+              <p>Push Lua modules manually or connect your repository to import tagged releases automatically.</p>
+            </article>
+            <article class="timeline__item card">
+              <span class="timeline__step">02</span>
+              <h3>Configure delivery</h3>
+              <p>Assign environments, channels, UI presets, secrets, and access policies for each project.</p>
+            </article>
+            <article class="timeline__item card">
+              <span class="timeline__step">03</span>
+              <h3>Publish safely</h3>
+              <p>Generate approved integration snippets, review diffs, and ship updates without exposing source files publicly.</p>
+            </article>
+            <article class="timeline__item card">
+              <span class="timeline__step">04</span>
+              <h3>Observe and iterate</h3>
+              <p>Use analytics, audit logs, and release health indicators to guide the next rollout.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="dashboard">
+          <div class="dashboard-layout">
+            <div class="section-heading section-heading--left">
+              <span class="eyebrow">Web panel</span>
+              <h2>A dashboard built for collaboration.</h2>
+              <p>
+                Give engineers, designers, and producers visibility into releases, UI layouts, and deployment performance without sharing raw project internals.
+              </p>
+              <ul class="check-list">
+                <li>Team workspaces with scoped permissions</li>
+                <li>Release notes, version compare, and rollback controls</li>
+                <li>UI presets for internal tools and player-facing menus</li>
+                <li>Signed API access for private project integrations</li>
+              </ul>
+            </div>
+            <div class="dashboard-preview card">
+              <div class="dashboard-preview__header">
+                <span>vault-ui / stable</span>
+                <span class="status-pill">Healthy</span>
+              </div>
+              <div class="dashboard-preview__metrics">
+                <div>
+                  <span>Requests</span>
+                  <strong>184.2K</strong>
+                </div>
+                <div>
+                  <span>Latency</span>
+                  <strong>92ms</strong>
+                </div>
+                <div>
+                  <span>Active places</span>
+                  <strong>12</strong>
+                </div>
+              </div>
+              <div class="dashboard-preview__list">
+                <div>
+                  <span>Latest release</span>
+                  <strong>v2.4.1 · 2 hours ago</strong>
+                </div>
+                <div>
+                  <span>Rollback target</span>
+                  <strong>v2.3.8</strong>
+                </div>
+                <div>
+                  <span>UI preset</span>
+                  <strong>Creator Console</strong>
+                </div>
+                <div>
+                  <span>Auth policy</span>
+                  <strong>Studio-only signed token</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--compact" id="faq">
+          <div class="section-heading">
+            <span class="eyebrow">FAQ</span>
+            <h2>Built for legitimate creator workflows.</h2>
+          </div>
+          <div class="faq-list">
+            <article class="card faq-item">
+              <h3>Does ScriptVault replace source control?</h3>
+              <p>
+                No. It complements Git-based workflows by focusing on secure delivery, release channels, and operational visibility.
+              </p>
+            </article>
+            <article class="card faq-item">
+              <h3>Can teams manage multiple experiences?</h3>
+              <p>
+                Yes. Organize projects by game, environment, or studio team and control which integrations can access each release.
+              </p>
+            </article>
+            <article class="card faq-item">
+              <h3>Is this meant for exploit distribution?</h3>
+              <p>
+                No. The platform is positioned for approved creator tooling, internal utilities, and secure module delivery inside authorized Roblox projects.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section cta-section" id="cta">
+          <div class="card cta-card">
+            <div>
+              <span class="eyebrow">ScriptVault</span>
+              <h2>Run the power. Keep the code protected.</h2>
+              <p>
+                Launch faster with a polished dashboard, private delivery workflows, and safer collaboration for Roblox development teams.
+              </p>
+            </div>
+            <form class="cta-form">
+              <label>
+                Email
+                <input type="email" placeholder="team@studio.com" aria-label="Email address" />
+              </label>
+              <label>
+                Team size
+                <select aria-label="Team size">
+                  <option>1-5 creators</option>
+                  <option>6-20 creators</option>
+                  <option>21-50 creators</option>
+                  <option>50+ creators</option>
+                </select>
+              </label>
+              <button class="button" type="submit">Request private beta</button>
+              <p class="form-note">This demo form is front-end only and shows a confirmation message.</p>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
